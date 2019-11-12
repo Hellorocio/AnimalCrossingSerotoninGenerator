@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BGColor"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Breathe"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            />
+
+        <ImageView
+            android:id="@+id/isabelleBreatheIV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_tag_faces_black_24dp"
+            android:padding="50dp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/breatheTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Breathe in"
+            android:textSize="30sp"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/breatheBottomIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_filled_circle_24dp"
+                android:padding="50dp"
+                android:tint="#ffffff"
+                />
+            <ImageView
+                android:id="@+id/breatheTopIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_filled_circle_24dp"
+                android:padding="50dp"
+                android:scaleX=".5"
+                android:scaleY=".5"
+                android:tint="#8aceff"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
