@@ -1,5 +1,6 @@
 package com.example.animalcrossingserotoningenerator
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +16,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        breatheBut.setOnClickListener {
+            val intent = Intent(this, BreatheActivity::class.java)
+            startActivity(intent)
+        }
+
+        musicBut.setOnClickListener {
+            val intent = Intent(this, MusicActivity::class.java)
+            startActivity(intent)
+        }
+
+        inspBut.setOnClickListener {
+            val intent = Intent(this, InspActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

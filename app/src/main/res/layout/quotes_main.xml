@@ -50,9 +50,9 @@
                 android:id="@+id/quoteTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I love you"
-                android:padding="16dp"
-                android:textSize="30sp"
+                android:text="We cannot change our memories, but we can change their meaning and the power they have over us."
+                android:layout_margin="32dp"
+                android:textSize="15sp"
                 android:gravity="center"
                 />
         </FrameLayout>
