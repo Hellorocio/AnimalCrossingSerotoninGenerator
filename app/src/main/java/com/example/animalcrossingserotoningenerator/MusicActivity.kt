@@ -28,14 +28,14 @@ class MusicActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.d("MainActivity", "ONSTART!")
-
+        /*
         val connectionParams = ConnectionParams.Builder(clientId)
             .setRedirectUri(redirectUri)
             .showAuthView(true)
             .build()
 
         Log.d("MainActivity", "BUILD THINGY!")
-        /*
+
         SpotifyAppRemote.connect(this, connectionParams, object : Connector.ConnectionListener {
             override fun onConnected(appRemote: SpotifyAppRemote) {
                 spotifyAppRemote = appRemote

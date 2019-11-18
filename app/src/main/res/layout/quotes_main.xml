@@ -25,33 +25,32 @@
             android:id="@+id/characterNameTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="24dp"
-            android:textSize="30sp"
+            android:paddingTop="6dp"
+            android:textSize="20sp"
             android:text="Bob says: "/>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             >
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:src="@drawable/ic_chat_bubble_black_24dp"
                 android:tint="#ffffff"
-                android:scaleX="-16"
-                android:scaleY="7"
-                android:paddingTop="64dp"
-                android:paddingBottom="64dp"
+                android:scaleType="fitXY"
+                android:scaleX="-1.1"
                 />
 
             <TextView
                 android:id="@+id/quoteTV"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="We cannot change our memories, but we can change their meaning and the power they have over us."
-                android:layout_margin="32dp"
+                android:layout_marginBottom="16dp"
+                android:padding="24dp"
                 android:textSize="15sp"
                 android:gravity="center"
                 />
@@ -62,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:src="@drawable/ic_tag_faces_black_24dp"
+        android:src="@drawable/bob_bg"
         />
 
         <Button
@@ -70,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="New Quote"
+            android:layout_marginTop="10dp"
             />
 
 

@@ -22,15 +22,14 @@
             android:text="Animal Crossing: Serotonin Generator"
             android:gravity="center"
             android:textStyle="bold"
-            android:textSize="40sp"
+            android:textSize="38sp"
             />
 
         <ImageView
             android:id="@+id/isabelleMainIV"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:src="@drawable/ic_tag_faces_black_24dp"
-            android:padding="50dp"
+            android:src="@drawable/bob_bg"
             android:layout_weight="1"
             />
 
