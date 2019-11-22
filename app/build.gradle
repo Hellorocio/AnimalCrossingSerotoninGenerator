@@ -22,8 +22,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -54,5 +54,7 @@ dependencies {
     
     //spotify
     implementation project(':spotify-app-remote-release-0.6.3')
-    implementation "com.google.code.gson:gson:2.6.1"
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation 'androidx.browser:browser:1.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
 }

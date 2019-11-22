@@ -19,6 +19,7 @@ class MusicActivity : AppCompatActivity() {
     private val clientId = "fc350938cc614782b044ff892d8b5498"
     private val redirectUri = "http://com.example.animalcrossingserotoningenerator/callback"
     private var spotifyAppRemote: SpotifyAppRemote? = null
+    private val clientSecret = "04ab4d2f514241f6a528bb6e797d76d6"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,6 @@ class MusicActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.d("MainActivity", "ONSTART!")
-        /*
         val connectionParams = ConnectionParams.Builder(clientId)
             .setRedirectUri(redirectUri)
             .showAuthView(true)
@@ -50,7 +50,6 @@ class MusicActivity : AppCompatActivity() {
             }
         })
 
-         */
     }
 
     private fun connected() {
@@ -69,12 +68,9 @@ class MusicActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        /*
         spotifyAppRemote?.let {
             SpotifyAppRemote.disconnect(it)
         }
-
-         */
 
     }
 }
