@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:src="@drawable/bob_bg"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             />
 
@@ -52,6 +53,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Inspiration"
+            />
+
+        <Button
+            android:id="@+id/chatBut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chat"
             />
 
     </LinearLayout>

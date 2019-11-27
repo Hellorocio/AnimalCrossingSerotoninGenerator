@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.animalcrossingserotoningenerator">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -21,18 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".BreatheActivity">
-        </activity>
-
-        <activity
-            android:name=".MusicActivity">
-        </activity>
-
-        <activity
-            android:name=".InspActivity">
-        </activity>
+        <activity android:name=".BreatheActivity"></activity>
+        <activity android:name=".MusicActivity"></activity>
+        <activity android:name=".InspActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>
