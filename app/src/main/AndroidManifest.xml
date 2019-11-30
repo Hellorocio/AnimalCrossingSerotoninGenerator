@@ -10,7 +10,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ProfileActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -21,10 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BreatheActivity"></activity>
-        <activity android:name=".MusicActivity"></activity>
-        <activity android:name=".InspActivity"></activity>
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".BreatheActivity" />
+        <activity android:name=".MusicActivity" />
+        <activity android:name=".InspActivity" />
+        <activity android:name=".ChatActivity" />
     </application>
 
 </manifest>

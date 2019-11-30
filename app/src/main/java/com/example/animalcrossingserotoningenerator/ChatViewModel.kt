@@ -49,26 +49,23 @@ class ChatViewModel : ViewModel() {
                 chatRow.message
             )
         )
-        // XXX Write me
 
         db.collection("globalChat").add(chatRow)
-        // https://firebase.google.com/docs/firestore/manage-data/add-data#add_a_document
         
     }
 
-    fun getChat() {
-        // XXX Write me.  Limit total number of chat rows to 100
-
-            db.collection("globalChat").limit(100).orderBy("timeStamp").addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                if (firebaseFirestoreException != null) {
-                    Log.w(ChatActivity.TAG, "listen:error", firebaseFirestoreException)
-                    return@addSnapshotListener
-                }
-                Log.d(ChatActivity.TAG, "fetch ${querySnapshot!!.documents.size}")
-                chat.value = querySnapshot.documents.mapNotNull {
-                    it.toObject(ChatRow::class.java)
-                }
+    fun getChat()  {
+        // Limit total number of chat rows to 100
+        db.collection("globalChat").limit(100).orderBy("timeStamp").addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+            if (firebaseFirestoreException != null) {
+                Log.w(ChatActivity.TAG, "listen:error", firebaseFirestoreException)
+                return@addSnapshotListener
             }
+            Log.d(ChatActivity.TAG, "fetch ${querySnapshot!!.documents.size}")
+            chat.value = querySnapshot.documents.mapNotNull {
+                it.toObject(ChatRow::class.java)
+            }
+        }
     }
 
     fun uploadJpg(localPath: String, uuid: String) {

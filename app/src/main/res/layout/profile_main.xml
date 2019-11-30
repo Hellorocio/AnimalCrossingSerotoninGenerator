@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BGColor"
+    android:orientation = "vertical"
+    android:weightSum="10"
+    android:padding="16dp"
+    >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:paddingBottom="16dp"
+        android:background="#ffffff"
+        >
+
+        <ImageView
+            android:id="@+id/profilePicIV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bob"
+            android:paddingBottom="16dp"
+            />
+
+    </FrameLayout>
+
+
+    <EditText
+        android:id="@+id/displayNameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:paddingBottom="16dp"
+        />
+
+    <Spinner
+        android:id="@+id/personalityTypeSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/aboutMeET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:gravity="top"
+        android:text="About me"
+        android:background="#ffffff"
+        android:paddingBottom="16dp"
+
+        />
+
+    <Button
+        android:id="@+id/submitBut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        />
+
+
+</LinearLayout>

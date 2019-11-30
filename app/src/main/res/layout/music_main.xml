@@ -31,7 +31,7 @@
              android:textSize="30sp"/>
 
         <ImageView
-            android:id="@+id/albumCoverIV"
+            android:id="@+id/songPictureIV"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="8"
@@ -58,7 +58,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/ic_play_arrow_black_24dp"
+                android:src="@drawable/ic_pause_black_24dp"
                 />
 
             <ImageView

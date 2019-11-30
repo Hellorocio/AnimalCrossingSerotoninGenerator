@@ -163,7 +163,7 @@ class ChatFragment : Fragment() {
             ViewModelProviders.of(this)[ChatViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
         val root = inflater.inflate(R.layout.fragment_chat, container, false)
-        root.findViewById<TextView>(R.id.chatTitleTV).text = "Title should identify"
+        root.findViewById<TextView>(R.id.chatTitleTV).text = "Let's talk!"
 
         initMessageCompose(root)
 
