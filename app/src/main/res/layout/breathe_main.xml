@@ -25,7 +25,6 @@ w
             android:id="@+id/isabelleBreatheIV"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:src="@drawable/bob_bg"
             android:layout_margin="8dp"
             android:layout_weight="1"
             />

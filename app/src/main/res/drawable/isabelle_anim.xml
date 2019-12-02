@@ -1,0 +1,11 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/isabelle_4" android:duration="666" />
+    <item android:drawable="@drawable/isabelle_3" android:duration="667" />
+    <item android:drawable="@drawable/isabelle_2" android:duration="667" />
+    <item android:drawable="@drawable/isabelle_1" android:duration="3500" />
+    <item android:drawable="@drawable/isabelle_2" android:duration="1000" />
+    <item android:drawable="@drawable/isabelle_3" android:duration="1000" />
+    <item android:drawable="@drawable/isabelle_4" android:duration="1000" />
+    <item android:drawable="@drawable/isabelle_5" android:duration="1000" />
+</animation-list>
