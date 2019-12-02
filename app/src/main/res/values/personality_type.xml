@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="personality_type">
+        <item>Choose a personality</item>
+        <item>Lazy</item>
+        <item>Peppy</item>
+        <item>Snooty</item>
+        <item>Jock</item>
+        <item>Normal</item>
+        <item>Uchi</item>
+        <item>Smug</item>
+        <item>Cranky</item>
+    </string-array>
+</resources>

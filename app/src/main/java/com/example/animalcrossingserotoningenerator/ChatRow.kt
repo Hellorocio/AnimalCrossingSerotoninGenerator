@@ -9,5 +9,6 @@ data class ChatRow(
     var message: String? = null,
     var ownerUid: String? = null,
     var pictureUUID: String? = null,
+    var email: String? = null,
     @ServerTimestamp val timeStamp: Timestamp? = null
 )

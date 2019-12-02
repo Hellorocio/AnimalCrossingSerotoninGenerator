@@ -44,18 +44,19 @@ class Auth(private val activity: MainActivity) {
         return user?.uid
     }
 
-    fun setDisplayNameByEmail() {
-        val user = FirebaseAuth.getInstance().currentUser
+    fun setDisplayName(newName : String) {
+        //val user = FirebaseAuth.getInstance().currentUser
         if( user == null ) return
-        val displayName = user.email?.substringBefore("@")
         val profileUpdates = UserProfileChangeRequest.Builder()
-            .setDisplayName(displayName)
+            .setDisplayName(newName)
             .build()
-        user.updateProfile(profileUpdates)
+        user!!.updateProfile(profileUpdates)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d(javaClass.simpleName, "User profile updated.")
+                    user = FirebaseAuth.getInstance().currentUser
                 }
             }
+
+
     }
 }

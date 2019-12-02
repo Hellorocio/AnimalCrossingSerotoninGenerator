@@ -44,4 +44,9 @@ class ProfileViewModel : ViewModel() {
             }
         }
     }
+
+    fun setProfileInfo(updatedInfo : UserInfo) {
+        db.collection("users").document(updatedInfo.email!!)
+            .set(updatedInfo)
+    }
 }

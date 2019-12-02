@@ -27,9 +27,6 @@ class ChatActivity : AppCompatActivity() {
 
 
         val user = FirebaseAuth.getInstance().currentUser
-        if(user != null) {
-            auth.setDisplayNameByEmail()
-        }
 
         supportFragmentManager.beginTransaction().replace(
             id.content,

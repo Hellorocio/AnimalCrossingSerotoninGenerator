@@ -81,8 +81,6 @@ class ChatFragment : Fragment() {
                         viewModel.uploadJpg(currentPhotoPath!!, pictureUUID.toString())
                     }
 
-
-
                     clearCompose()
                 }
                 viewModel.saveChatRow(chatRow)
