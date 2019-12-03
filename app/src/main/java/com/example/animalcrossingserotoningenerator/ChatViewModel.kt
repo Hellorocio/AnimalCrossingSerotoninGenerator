@@ -39,6 +39,15 @@ class ChatViewModel : ViewModel() {
     fun observeChat(): LiveData<List<ChatRow>> {
         return chat
     }
+
+    fun getChatSize(): Int {
+        if(chat.value == null){
+            return 0
+        } else {
+            return chat.value!!.size
+        }
+    }
+
     fun saveChatRow(chatRow: ChatRow) {
         Log.d(
             "HomeViewModel",

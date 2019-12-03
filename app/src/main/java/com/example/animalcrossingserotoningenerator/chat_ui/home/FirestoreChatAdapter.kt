@@ -1,12 +1,15 @@
 package com.example.animalcrossingserotoningenerator
 
+import android.content.Intent
 import android.icu.text.DateFormat
 import android.icu.text.SimpleDateFormat
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -36,7 +39,16 @@ class FirestoreChatAdapter(private var viewModel: ChatViewModel)
         private var userTV = itemView.findViewById<TextView>(R.id.chatUserTV)
         private var timeTV = itemView.findViewById<TextView>(R.id.chatTimeTV)
         private var textTV = itemView.findViewById<TextView>(R.id.chatTextTV)
-
+        init {
+            userTV.setOnClickListener {
+                val intent = Intent(itemView.context, ProfileActivity::class.java)
+                val myExtras = Bundle()
+                myExtras.putBoolean("mine", MainActivity.auth.getEmail() == getItem(adapterPosition).email)
+                myExtras.putString("email", getItem(adapterPosition).email)
+                intent.putExtras(myExtras)
+                itemView.context.startActivity(intent)
+            }
+        }
         fun bind(item: ChatRow?) {
             if (item == null) return
             userTV.text = item.name

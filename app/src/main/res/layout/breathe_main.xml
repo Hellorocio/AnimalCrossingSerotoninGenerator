@@ -27,6 +27,8 @@ w
             android:layout_height="0dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:scaleX=".9"
+            android:background="@drawable/isabelle_4"
             />
 
         <TextView

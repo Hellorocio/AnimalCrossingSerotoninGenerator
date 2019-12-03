@@ -28,6 +28,7 @@ import com.example.animalcrossingserotoningenerator.ChatActivity
 import com.example.animalcrossingserotoningenerator.ChatViewModel
 import com.example.animalcrossingserotoningenerator.R
 import edu.cs371m.firestore.ChatRow
+import kotlinx.android.synthetic.main.fragment_chat.*
 import kotlinx.android.synthetic.main.fragment_chat.view.*
 import java.io.File
 import java.io.IOException
@@ -59,11 +60,6 @@ class ChatFragment : Fragment() {
         currentPhotoPath = null
     }
     private fun initMessageCompose(root: View) {
-        // Take a picture button
-        root.findViewById<ImageButton>(R.id.composeCameraIB).setOnClickListener {
-            Log.d(ChatActivity.TAG, "Camera intent")
-            takePictureIntent()
-        }
         // Message text area
         messageET = root.findViewById(R.id.composeMessageET)
         // Send message button
@@ -73,8 +69,7 @@ class ChatFragment : Fragment() {
                     name = viewModel.getDisplayName()
                     ownerUid = viewModel.getUid()
                     message = messageET.text.toString()
-                    // XXX Write me
-
+                    email = viewModel.getEmail()
 
                     if(currentPhotoPath!=null) {
                         pictureUUID = randomUUID().toString()
@@ -169,7 +164,10 @@ class ChatFragment : Fragment() {
         viewModel.observeChat().observe(this, Observer {
             Log.d(ChatActivity.TAG, "Observe Chat $it")
             chatAdapter.submitList(it)
+            root.findViewById<RecyclerView>(R.id.homeRV).smoothScrollToPosition(viewModel.getChatSize() - 1)
         })
+
+
 
         return root
     }

@@ -27,7 +27,7 @@ class ProfilePhotoFragment : Fragment() {
         val rv = root.findViewById<RecyclerView>(R.id.recyclerView)
         val adapter = ProfilePhotoRVAdapter(viewModel)
         rv.adapter = adapter
-        rv.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        rv.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
         val itemDecor = DividerItemDecoration(rv.context, LinearLayoutManager.VERTICAL)
         itemDecor.setDrawable(ContextCompat.getDrawable(rv.context, (R.drawable.divider))!!)
         rv.addItemDecoration(itemDecor)

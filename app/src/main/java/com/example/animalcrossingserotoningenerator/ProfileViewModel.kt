@@ -31,6 +31,10 @@ class ProfileViewModel : ViewModel() {
         return users
     }
 
+    fun getUsers() : List<UserInfo>? {
+        return users.value
+    }
+
     fun getProfileInfo() {
         db.collection("users").addSnapshotListener { querySnapshot, firebaseFirestoreException ->
             if (firebaseFirestoreException != null) {
@@ -48,5 +52,10 @@ class ProfileViewModel : ViewModel() {
     fun setProfileInfo(updatedInfo : UserInfo) {
         db.collection("users").document(updatedInfo.email!!)
             .set(updatedInfo)
+    }
+
+    fun createProfile() {
+        var defaultUserInfo = UserInfo("Tell us about yourself!", MainActivity.auth.getEmail(), "ac_bob", MainActivity.auth.getDisplayName(), 0)
+        setProfileInfo(defaultUserInfo)
     }
 }

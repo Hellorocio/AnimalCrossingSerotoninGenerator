@@ -42,12 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         >
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/composeCameraIB"
-            android:background="@drawable/ic_tag_faces_black_24dp"
-            />
         <EditText
             android:layout_width="0dp"
             android:layout_weight="1"

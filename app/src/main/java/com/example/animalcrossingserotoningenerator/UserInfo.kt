@@ -5,5 +5,6 @@ data class UserInfo(
     var aboutMe: String? = null,
     var email: String? = null,
     var imageName: String? = null,
+    var name: String? = null,
     var personalityType: Int? = null
 )

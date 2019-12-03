@@ -58,7 +58,7 @@ class BreatheActivity : AppCompatActivity() {
 
             override fun onTick(millisUntilFinished: Long) {
 
-                var scale = (4000f - millisUntilFinished)/4000f + .1f
+                var scale = (breatheInTime.toFloat() - millisUntilFinished)/breatheInTime.toFloat() + .1f
                 // expanding the circle
                 breatheTopIV.scaleX = scale
                 breatheTopIV.scaleY = scale
@@ -93,7 +93,7 @@ class BreatheActivity : AppCompatActivity() {
 
             override fun onTick(millisUntilFinished: Long) {
 
-                var scale = 1.1f - (8000f - millisUntilFinished)/8000f
+                var scale = 1.1f - (breatheOutTime.toFloat() - millisUntilFinished)/breatheOutTime.toFloat()
                 // expanding the circle
                 breatheTopIV.scaleX = scale
                 breatheTopIV.scaleY = scale

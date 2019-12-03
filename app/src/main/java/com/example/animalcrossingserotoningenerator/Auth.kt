@@ -31,6 +31,8 @@ class Auth(private val activity: MainActivity) {
                     .build(),
                 rcSignIn
             )
+            Log.d("XXX", "sign in attempt")
+
         }
     }
     fun getDisplayName(): String? {
@@ -56,7 +58,22 @@ class Auth(private val activity: MainActivity) {
                     user = FirebaseAuth.getInstance().currentUser
                 }
             }
+    }
 
-
+    fun switchAccount() {
+        // Create and launch sign-in intent
+        FirebaseAuth.AuthStateListener {
+            user = FirebaseAuth.getInstance().currentUser
+        }
+        activity.startActivityForResult(
+            AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                // Was creating problems
+                .setIsSmartLockEnabled(false)
+                .setAvailableProviders(providers)
+                .build(),
+            rcSignIn
+        )
+        Log.d("XXX", "sign in attempt")
     }
 }
