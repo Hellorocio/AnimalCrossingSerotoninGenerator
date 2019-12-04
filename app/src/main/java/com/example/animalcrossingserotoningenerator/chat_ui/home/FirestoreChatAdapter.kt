@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.DiffUtil
@@ -39,6 +40,7 @@ class FirestoreChatAdapter(private var viewModel: ChatViewModel)
         private var userTV = itemView.findViewById<TextView>(R.id.chatUserTV)
         private var timeTV = itemView.findViewById<TextView>(R.id.chatTimeTV)
         private var textTV = itemView.findViewById<TextView>(R.id.chatTextTV)
+        private var iconIV = itemView.findViewById<ImageView>(R.id.cardIconIV)
         init {
             userTV.setOnClickListener {
                 val intent = Intent(itemView.context, ProfileActivity::class.java)
@@ -63,6 +65,8 @@ class FirestoreChatAdapter(private var viewModel: ChatViewModel)
             if (item.timeStamp != null) {
                 timeTV.text = dateFormat.format(item.timeStamp.toDate())
             }
+
+            iconIV.setImageResource(itemView.resources.getIdentifier(viewModel.getProfilePhoto(item.email!!), "drawable", itemView.context.packageName))
         }
     }
 

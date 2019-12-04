@@ -7,6 +7,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.os.StrictMode
 import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
@@ -42,7 +43,6 @@ class ChatFragment : Fragment() {
     private lateinit var myHomeRV: RecyclerView
     private lateinit var messageET: EditText
     private lateinit var chatAdapter: FirestoreChatAdapter
-    // Is there an outstanding photo, if so where?
     private var currentPhotoPath: String? = null
 
     private fun initRecyclerView(root: View)  {
@@ -65,22 +65,27 @@ class ChatFragment : Fragment() {
         // Send message button
         root.findViewById<ImageButton>(R.id.composeSendIB).setOnClickListener {
             if( messageET.text.isNotEmpty()) {
-                val chatRow = ChatRow().apply {
-                    name = viewModel.getDisplayName()
-                    ownerUid = viewModel.getUid()
-                    message = messageET.text.toString()
-                    email = viewModel.getEmail()
-
-                    if(currentPhotoPath!=null) {
-                        pictureUUID = randomUUID().toString()
-                        viewModel.uploadJpg(currentPhotoPath!!, pictureUUID.toString())
-                    }
-
-                    clearCompose()
-                }
-                viewModel.saveChatRow(chatRow)
+                viewModel.filterText(messageET.text.toString())
             }
         }
+        viewModel.observeFilterText().observe(this, Observer {
+            val chatRow = ChatRow().apply {
+                name = viewModel.getDisplayName()
+                ownerUid = viewModel.getUid()
+                message = it
+
+
+                email = viewModel.getEmail()
+
+                if(currentPhotoPath!=null) {
+                    pictureUUID = randomUUID().toString()
+                    viewModel.uploadJpg(currentPhotoPath!!, pictureUUID.toString())
+                }
+
+                clearCompose()
+            }
+            viewModel.saveChatRow(chatRow)
+        })
     }
     //////////////////////////////////////////////////////////////////////
     // Camera stuff
@@ -147,6 +152,13 @@ class ChatFragment : Fragment() {
         viewModel.getChat()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var policy = StrictMode.ThreadPolicy.Builder()
+                .permitAll().build()
+        StrictMode.setThreadPolicy(policy)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -166,8 +178,12 @@ class ChatFragment : Fragment() {
             chatAdapter.submitList(it)
             root.findViewById<RecyclerView>(R.id.homeRV).smoothScrollToPosition(viewModel.getChatSize() - 1)
         })
-
-
+        viewModel.observeChat().observe(this, Observer {
+            Log.d(ChatActivity.TAG, "Observe Chat $it")
+            chatAdapter.submitList(it)
+            root.findViewById<RecyclerView>(R.id.homeRV).smoothScrollToPosition(viewModel.getChatSize() - 1)
+        })
+        viewModel.getUsers()
 
         return root
     }
